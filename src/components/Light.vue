@@ -1,10 +1,10 @@
 <template>
   <div class="traf">
-    <div class="timer"><div style="width:140px;height:140px;background:grey;margin-left: 3%;margin-top: 3%;border-radius: 55%;"><p style="color:white;font-size: 60px;margin: 0;padding-top: 25%;">{{sec}}</p></div></div>
     <div class="skelet">
       <div :class="{on: proccolor == '1'}" class="red"></div>
       <div :class="{on: proccolor == '2'}" class="yellow"></div>
       <div :class="{on: proccolor == '3'}" class="green"></div>
+    <div class="timer"><div style="width:140px;height:140px;background:grey;margin-left: 3%;margin-top: 3%;border-radius: 55%;"><p style="color:white;font-size: 60px;margin: 0;padding-top: 25%;">{{sec}}</p></div></div>
     </div>
   </div>
 </template>
@@ -58,16 +58,15 @@ export default {
     opacity: 1;
   }
   .timer{
-    position: absolute;
-    left: 57.9%;
-    top: 72.1%;
+   position: absolute;
+    margin-top: -44%;
+    padding-top: 0.6%;
+    margin-left: 100%;
     width: 150px;
     height: 150px;
     background: black;
   }
-  .traf{
-    position: relative;
-  }
+
   .blink{
     animation: bl .5s infinite;
   }
@@ -109,99 +108,99 @@ export default {
  
 
 
-    switch (this.proccolor){
-      case '1':
-        if(this.curcolor == localStorage.prevcolor){
-          if(localStorage.sec !=0 && localStorage.sec > 0 ){
-            this.sec = localStorage.sec;
-          } else {
-             this.sec = 10;
-             localStorage.sec = this.sec;
-          }
-        } else {
-          localStorage.prevcolor = this.curcolor;
-          this.sec = 10;
-          localStorage.sec = this.sec;
-        }
-        var interval = setInterval(()=>{
-          this.sec--;
-          localStorage.sec = this.sec;
-          if(this.sec < 3){
-            blinktarget = document.querySelector('.red');
-            blinktarget.classList.add('blink');
-          }
-          if(this.sec == 0){
-            localStorage.prevcolor = '1';
-            localStorage.pcfy = '1';
-            blinktarget.classList.remove('blink');
-            clearInterval(interval);
-            this.$router.push('yellow');          
-          }
-        },1000);
-        break;
-      case '2':
-        if(this.curcolor == localStorage.prevcolor){
-          if(localStorage.sec !=0 && localStorage.sec > 0 ){
-            this.sec = localStorage.sec;
-          } else {
-             this.sec = 3;
-             localStorage.sec = this.sec;
-          }
-        } else {
-          localStorage.prevcolor = this.curcolor;
-          this.sec = 3;
-          localStorage.sec = this.sec;
-        }
-        var interval = setInterval(()=>{
-          this.sec--;
-          localStorage.sec = this.sec;
-          if(this.sec < 3){
-            blinktarget = document.querySelector('.yellow');
-            blinktarget.classList.add('blink');
-          }
-          if(this.sec == 0){
-            localStorage.prevcolor = '2';
-            blinktarget.classList.remove('blink');
-            if(localStorage.pcfy == '1'){
-              clearInterval(interval);
-              this.$router.push('green');
-            } else{
-              clearInterval(interval);
-              this.$router.push('red');
-            }
-          }
-        },1000);
-        break;
-      case '3':
-       if(this.curcolor == localStorage.prevcolor){
-          if(localStorage.sec !=0 && localStorage.sec > 0 ){
-            this.sec = localStorage.sec;
-          } else {
-             this.sec = 15;
-             localStorage.sec = this.sec;
-          }
-        } else {
-          localStorage.prevcolor = this.curcolor;
-          this.sec = 15;
-          localStorage.sec = this.sec;
-        }
-        var interval = setInterval(()=>{
-          this.sec--;
-          localStorage.sec = this.sec;
-          if(this.sec <3){
-            blinktarget = document.querySelector('.green');
-            blinktarget.classList.add('blink');
-          }
-          if(this.sec == 0){
-            localStorage.prevcolor = '3';
-            localStorage.pcfy = '3';
-            blinktarget.classList.remove('blink');
-            clearInterval(interval);
-            this.$router.push('yellow');          
-          }
-        },1000);
-        break;
-    }
+    // switch (this.proccolor){
+    //   case '1':
+    //     if(this.curcolor == localStorage.prevcolor){
+    //       if(localStorage.sec !=0 && localStorage.sec > 0 ){
+    //         this.sec = localStorage.sec;
+    //       } else {
+    //          this.sec = 10;
+    //          localStorage.sec = this.sec;
+    //       }
+    //     } else {
+    //       localStorage.prevcolor = this.curcolor;
+    //       this.sec = 10;
+    //       localStorage.sec = this.sec;
+    //     }
+    //     var interval = setInterval(()=>{
+    //       this.sec--;
+    //       localStorage.sec = this.sec;
+    //       if(this.sec < 3){
+    //         blinktarget = document.querySelector('.red');
+    //         blinktarget.classList.add('blink');
+    //       }
+    //       if(this.sec == 0){
+    //         localStorage.prevcolor = '1';
+    //         localStorage.pcfy = '1';
+    //         blinktarget.classList.remove('blink');
+    //         clearInterval(interval);
+    //         this.$router.push('yellow');          
+    //       }
+    //     },1000);
+    //     break;
+    //   case '2':
+    //     if(this.curcolor == localStorage.prevcolor){
+    //       if(localStorage.sec !=0 && localStorage.sec > 0 ){
+    //         this.sec = localStorage.sec;
+    //       } else {
+    //          this.sec = 3;
+    //          localStorage.sec = this.sec;
+    //       }
+    //     } else {
+    //       localStorage.prevcolor = this.curcolor;
+    //       this.sec = 3;
+    //       localStorage.sec = this.sec;
+    //     }
+    //     var interval = setInterval(()=>{
+    //       this.sec--;
+    //       localStorage.sec = this.sec;
+    //       if(this.sec < 3){
+    //         blinktarget = document.querySelector('.yellow');
+    //         blinktarget.classList.add('blink');
+    //       }
+    //       if(this.sec == 0){
+    //         localStorage.prevcolor = '2';
+    //         blinktarget.classList.remove('blink');
+    //         if(localStorage.pcfy == '1'){
+    //           clearInterval(interval);
+    //           this.$router.push('green');
+    //         } else{
+    //           clearInterval(interval);
+    //           this.$router.push('red');
+    //         }
+    //       }
+    //     },1000);
+    //     break;
+    //   case '3':
+    //    if(this.curcolor == localStorage.prevcolor){
+    //       if(localStorage.sec !=0 && localStorage.sec > 0 ){
+    //         this.sec = localStorage.sec;
+    //       } else {
+    //          this.sec = 15;
+    //          localStorage.sec = this.sec;
+    //       }
+    //     } else {
+    //       localStorage.prevcolor = this.curcolor;
+    //       this.sec = 15;
+    //       localStorage.sec = this.sec;
+    //     }
+    //     var interval = setInterval(()=>{
+    //       this.sec--;
+    //       localStorage.sec = this.sec;
+    //       if(this.sec <3){
+    //         blinktarget = document.querySelector('.green');
+    //         blinktarget.classList.add('blink');
+    //       }
+    //       if(this.sec == 0){
+    //         localStorage.prevcolor = '3';
+    //         localStorage.pcfy = '3';
+    //         blinktarget.classList.remove('blink');
+    //         clearInterval(interval);
+    //         this.$router.push('yellow');          
+    //       }
+    //     },1000);
+    //     break;
+    // }
    
 
     

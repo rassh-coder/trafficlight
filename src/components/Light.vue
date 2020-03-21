@@ -108,99 +108,99 @@ export default {
  
 
 
-    // switch (this.proccolor){
-    //   case '1':
-    //     if(this.curcolor == localStorage.prevcolor){
-    //       if(localStorage.sec !=0 && localStorage.sec > 0 ){
-    //         this.sec = localStorage.sec;
-    //       } else {
-    //          this.sec = 10;
-    //          localStorage.sec = this.sec;
-    //       }
-    //     } else {
-    //       localStorage.prevcolor = this.curcolor;
-    //       this.sec = 10;
-    //       localStorage.sec = this.sec;
-    //     }
-    //     var interval = setInterval(()=>{
-    //       this.sec--;
-    //       localStorage.sec = this.sec;
-    //       if(this.sec < 3){
-    //         blinktarget = document.querySelector('.red');
-    //         blinktarget.classList.add('blink');
-    //       }
-    //       if(this.sec == 0){
-    //         localStorage.prevcolor = '1';
-    //         localStorage.pcfy = '1';
-    //         blinktarget.classList.remove('blink');
-    //         clearInterval(interval);
-    //         this.$router.push('yellow');          
-    //       }
-    //     },1000);
-    //     break;
-    //   case '2':
-    //     if(this.curcolor == localStorage.prevcolor){
-    //       if(localStorage.sec !=0 && localStorage.sec > 0 ){
-    //         this.sec = localStorage.sec;
-    //       } else {
-    //          this.sec = 3;
-    //          localStorage.sec = this.sec;
-    //       }
-    //     } else {
-    //       localStorage.prevcolor = this.curcolor;
-    //       this.sec = 3;
-    //       localStorage.sec = this.sec;
-    //     }
-    //     var interval = setInterval(()=>{
-    //       this.sec--;
-    //       localStorage.sec = this.sec;
-    //       if(this.sec < 3){
-    //         blinktarget = document.querySelector('.yellow');
-    //         blinktarget.classList.add('blink');
-    //       }
-    //       if(this.sec == 0){
-    //         localStorage.prevcolor = '2';
-    //         blinktarget.classList.remove('blink');
-    //         if(localStorage.pcfy == '1'){
-    //           clearInterval(interval);
-    //           this.$router.push('green');
-    //         } else{
-    //           clearInterval(interval);
-    //           this.$router.push('red');
-    //         }
-    //       }
-    //     },1000);
-    //     break;
-    //   case '3':
-    //    if(this.curcolor == localStorage.prevcolor){
-    //       if(localStorage.sec !=0 && localStorage.sec > 0 ){
-    //         this.sec = localStorage.sec;
-    //       } else {
-    //          this.sec = 15;
-    //          localStorage.sec = this.sec;
-    //       }
-    //     } else {
-    //       localStorage.prevcolor = this.curcolor;
-    //       this.sec = 15;
-    //       localStorage.sec = this.sec;
-    //     }
-    //     var interval = setInterval(()=>{
-    //       this.sec--;
-    //       localStorage.sec = this.sec;
-    //       if(this.sec <3){
-    //         blinktarget = document.querySelector('.green');
-    //         blinktarget.classList.add('blink');
-    //       }
-    //       if(this.sec == 0){
-    //         localStorage.prevcolor = '3';
-    //         localStorage.pcfy = '3';
-    //         blinktarget.classList.remove('blink');
-    //         clearInterval(interval);
-    //         this.$router.push('yellow');          
-    //       }
-    //     },1000);
-    //     break;
-    // }
+    switch (this.proccolor){
+      case '1':
+        if(this.curcolor == localStorage.prevcolor){
+          if(localStorage.sec !=0 && localStorage.sec > 0 ){
+            this.sec = localStorage.sec;
+          } else {
+             this.sec = 10;
+             localStorage.sec = this.sec;
+          }
+        } else {
+          localStorage.prevcolor = this.curcolor;
+          this.sec = 10;
+          localStorage.sec = this.sec;
+        }
+        var interval = setInterval(()=>{
+          this.sec--;
+          localStorage.sec = this.sec;
+          if(this.sec < 3){
+            blinktarget = document.querySelector('.red');
+            blinktarget.classList.add('blink');
+          }
+          if(this.sec == 0){
+            localStorage.prevcolor = '1';
+            localStorage.pcfy = '1';
+            blinktarget.classList.remove('blink');
+            clearInterval(interval);
+            this.$router.push('yellow');          
+          }
+        },1000);
+        break;
+      case '2':
+        if(this.curcolor == localStorage.prevcolor){
+          if(localStorage.sec !=0 && localStorage.sec > 0 ){
+            this.sec = localStorage.sec;
+          } else {
+             this.sec = 3;
+             localStorage.sec = this.sec;
+          }
+        } else {
+          localStorage.prevcolor = this.curcolor;
+          this.sec = 3;
+          localStorage.sec = this.sec;
+        }
+        var interval = setInterval(()=>{
+          this.sec--;
+          localStorage.sec = this.sec;
+          if(this.sec < 3){
+            blinktarget = document.querySelector('.yellow');
+            blinktarget.classList.add('blink');
+          }
+          if(this.sec == 0){
+            localStorage.prevcolor = '2';
+            blinktarget.classList.remove('blink');
+            if(localStorage.pcfy == '1'){
+              clearInterval(interval);
+              this.$router.push('green');
+            } else{
+              clearInterval(interval);
+              this.$router.push('red');
+            }
+          }
+        },1000);
+        break;
+      case '3':
+       if(this.curcolor == localStorage.prevcolor){
+          if(localStorage.sec !=0 && localStorage.sec > 0 ){
+            this.sec = localStorage.sec;
+          } else {
+             this.sec = 15;
+             localStorage.sec = this.sec;
+          }
+        } else {
+          localStorage.prevcolor = this.curcolor;
+          this.sec = 15;
+          localStorage.sec = this.sec;
+        }
+        var interval = setInterval(()=>{
+          this.sec--;
+          localStorage.sec = this.sec;
+          if(this.sec <3){
+            blinktarget = document.querySelector('.green');
+            blinktarget.classList.add('blink');
+          }
+          if(this.sec == 0){
+            localStorage.prevcolor = '3';
+            localStorage.pcfy = '3';
+            blinktarget.classList.remove('blink');
+            clearInterval(interval);
+            this.$router.push('yellow');          
+          }
+        },1000);
+        break;
+    }
    
 
     
